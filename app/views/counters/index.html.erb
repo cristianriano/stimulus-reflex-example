@@ -1,6 +1,6 @@
-<div style="margin-top: 50px" data-controller="counters">
+<div style="margin-top: 50px" data-controller="counters" data-counters-count-value=<%= @count %> >
   <p>
-  Here is my count <%= tag.span @count, 'data-counters-target' => 'value' %>
+  Here is my count <%= tag.span @count %>
   </p>
   <%= button_tag "Increment", data: { reflex: 'click->CountersReflex#increment', count: @count } %>
   <!-- Click action is the default one for stimulus so we ommit it in this example -->

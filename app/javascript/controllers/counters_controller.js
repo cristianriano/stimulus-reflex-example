@@ -15,7 +15,9 @@ export default class extends ApplicationController {
    * By default, StimulusReflex overrides the -connect- method so make sure you
    * call super if you intend to do anything else when this controller connects.
   */
- static targets = ["value"]
+
+  // Available types
+  static values = { count: Number }
 
   connect () {
     super.connect()
@@ -25,8 +27,7 @@ export default class extends ApplicationController {
   decrement(event) {
     event.preventDefault()
     // Call the server side reflex
-    console.log(event)
-    this.stimulate('Counters#decrement', this.valueTarget.textContent)
+    this.stimulate("Counters#decrement", this.countValue);
   }
 
   /* Reflex specific lifecycle methods.
