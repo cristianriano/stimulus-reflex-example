@@ -34,4 +34,8 @@ class CountersReflex < ApplicationReflex
   def increment
     @count = element.dataset[:count].to_i + 1
   end
+
+  def decrement(count = 0)
+    @count = count.to_i - 1
+  end
 end
