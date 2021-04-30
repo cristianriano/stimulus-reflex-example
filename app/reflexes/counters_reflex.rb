@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExampleReflex < ApplicationReflex
+class CountersReflex < ApplicationReflex
   # Add Reflex methods in this file.
   #
   # All Reflex instances include CableReady::Broadcaster and expose the following properties:
@@ -31,5 +31,7 @@ class ExampleReflex < ApplicationReflex
   #   end
   #
   # Learn more at: https://docs.stimulusreflex.com/reflexes#reflex-classes
-
+  def increment
+    @count = element.dataset[:count].to_i + 1
+  end
 end

@@ -2,5 +2,5 @@
   <p>
   Here is my count <%= @count %>
   </p>
-  <%= button_tag "Increment" %>
+  <%= button_tag "Increment", data: { reflex: 'click->CountersReflex#increment', count: @count } %>
 </div>
